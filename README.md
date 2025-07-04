@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🎬 MovieSearch
 
-## Getting Started
+MovieSearch is a full-stack web application that allows users to search for movies, manage a watchlist, and export movie data to CSV. Built with the MERN stack, Firebase Auth, Redux Toolkit, and styled using Tailwind CSS + ShadCN UI.
 
-First, run the development server:
+## 🌐 Live Site
+[Visit MovieSearch](https://movie-search-steel-chi.vercel.app)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🧰 Tech Stack
+
+- **Frontend**: Next.js 15, React 19, Tailwind CSS, Framer Motion, ShadCN UI, Radix UI, Slick Carousel
+- **State Management**: Redux Toolkit
+- **Backend**: MongoDB, Mongoose, Firebase Auth
+- **Export**: CSV export using `json2csv`
+- **Hosting**: Vercel
+
+## 📁 Project Structure Overview
+
+```
+/app
+  /movies
+    - [id].js          # Movie detail page
+    - page.jsx         # Movie list/grid UI
+  /watchlist           # Watchlist page
+  /login               # Login/Signup logic
+/components
+  - MovieCard.jsx      # UI for each movie card
+  - Navbar.jsx         # Top nav bar
+  - ImgSlider.jsx      # Carousel component
+/lib
+  /features
+    - movieSlice.js
+    - userSlice.js
+    - watchlistSlice.js
+  - firebase.js        # Firebase auth setup
+  - db.js              # Mongoose DB connect logic
+  - exportMovies.js    # CSV exporting endpoint logic
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Features
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- 🔍 **Search & View Movies** – Browse movies with filters.
+- ❤️ **Watchlist** – Save and remove movies to/from your personal watchlist.
+- 👤 **Authentication** – Sign in with Firebase.
+- 📤 **CSV Export** – Export movies with cast to `.csv`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📦 API: Export Movies to CSV
 
-## Learn More
+You can export the movie list including cast and description to a `.csv` file by accessing the following endpoint:
 
-To learn more about Next.js, take a look at the following resources:
+```
+GET https://movie-search-steel-chi.vercel.app/api/exportMovies
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The CSV contains the following fields:
+- Movie name
+- Description
+- Cast (comma-separated names)
+- Created At
+- Updated At
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## ⚙️ Setup
 
-## Deploy on Vercel
+1. Clone the repo:
+```bash
+git clone https://github.com/your-username/movie-app.git
+cd movie-app
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. Install dependencies:
+```bash
+npm install
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. Create a `.env.local` file:
+```env
+MONGODB_URI=your-mongodb-uri
+NEXT_PUBLIC_FIREBASE_API_KEY=your-firebase-api-key
+...
+```
+
+4. Run the development server:
+```bash
+npm run dev
+```
+
+---
+
+Built with ❤️ by Bhavishya Gothwal
