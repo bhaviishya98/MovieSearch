@@ -19,7 +19,7 @@ const RecommendedMovies = () => {
         method: "GET",
         headers: {
           accept: "application/json",
-          Authorization: process.env.NEXT_PUBLIC_TMDB_BEARER_TOKEN,
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_TMDB_BEARER_TOKEN}`,
         },
       };
 
