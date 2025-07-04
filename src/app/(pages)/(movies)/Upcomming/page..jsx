@@ -15,7 +15,7 @@ const UpcomingPage = () => {
     const fetchUpcomingMovies = async () => {
       try {
         const response = await fetch(
-          `https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1&api_key${process.env.NEXT_PUBLIC_TMDB_API_KEY}`
+          `https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1&api_key=${process.env.NEXT_PUBLIC_TMDB_API_KEY}`
         );
         if (!response.ok) {
           throw new Error("Failed to fetch movies. Please check your API key.");

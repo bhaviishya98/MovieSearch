@@ -3,7 +3,7 @@
 MovieSearch is a full-stack web application that allows users to search for movies, manage a watchlist, and export movie data to CSV. Built with the MERN stack, Firebase Auth, Redux Toolkit, and styled using Tailwind CSS + ShadCN UI.
 
 ## 🌐 Live Site
-[Visit MovieSearch](https://movie-search-steel-chi.vercel.app)
+[Visit MovieSearch](https://movie-search-nine-ruby.vercel.app/)
 
 ## 🧰 Tech Stack
 
@@ -48,7 +48,7 @@ MovieSearch is a full-stack web application that allows users to search for movi
 You can export the movie list including cast and description to a `.csv` file by accessing the following endpoint:
 
 ```
-GET https://movie-search-steel-chi.vercel.app/api/exportMovies
+GET https://movie-search-nine-ruby.vercel.app/api/exportMovies
 ```
 
 The CSV contains the following fields:
@@ -73,8 +73,22 @@ npm install
 
 3. Create a `.env.local` file:
 ```env
-MONGODB_URI=your-mongodb-uri
-NEXT_PUBLIC_FIREBASE_API_KEY=your-firebase-api-key
+# 🌐 TMDB API
+NEXT_PUBLIC_TMDB_API_KEY=your_tmdb_api_key
+NEXT_PUBLIC_TMDB_BEARER_TOKEN=your_tmdb_bearer_token
+
+# 🛢️ MongoDB
+MONGODB_URI=your_mongodb_connection_uri
+
+# 🔥 Firebase Config
+NEXT_PUBLIC_FIREBASE_FIREBASE_KEY=your_firebase_api_key
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+NEXT_PUBLIC_FIREBASE_APP_ID=your_firebase_app_id
+NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=your_measurement_id
+
 ...
 ```
 
