@@ -3,7 +3,7 @@
 MovieSearch is a full-stack web application that allows users to search for movies, manage a watchlist, and export movie data to CSV. Built with the MERN stack, Firebase Auth, Redux Toolkit, and styled using Tailwind CSS + ShadCN UI.
 
 ## 🌐 Live Site
-[Visit MovieSearch](https://movie-search-nine-ruby.vercel.app/)
+[Visit MovieSearch](https://movie-search-xi-liart.vercel.app/)
 
 ## 🧰 Tech Stack
 
@@ -48,7 +48,7 @@ MovieSearch is a full-stack web application that allows users to search for movi
 You can export the movie list including cast and description to a `.csv` file by accessing the following endpoint:
 
 ```
-GET https://movie-search-nine-ruby.vercel.app/api/exportMovies
+GET https://movie-search-xi-liart.vercel.app/api/exportMovies
 ```
 
 The CSV contains the following fields:
@@ -62,8 +62,8 @@ The CSV contains the following fields:
 
 1. Clone the repo:
 ```bash
-git clone https://github.com/your-username/movie-app.git
-cd movie-app
+git clone https://github.com/bhaviishya98/MovieSearch.git
+cd MovieSearch
 ```
 
 2. Install dependencies:
