@@ -58,6 +58,47 @@ The CSV contains the following fields:
 - Created At
 - Updated At
 
+## 📥 API: Import Movies from TMDB
+
+You can bulk-import popular movies from TMDB into the database by specifying how many pages to fetch.
+
+### 🔗 Endpoint
+```
+POST /api/importMovies
+```
+
+### 🧾 Request Body (JSON)
+
+```json
+{
+  "pages": 3
+}
+```
+
+This will import 3 pages of movies (usually 20 movies per page) with detailed cast and description info.
+
+### 🧪 Sample cURL Request
+
+```bash
+curl -X POST https://movie-search-nine-ruby.vercel.app/api/importMovies \
+  -H "Content-Type: application/json" \
+  -d '{"pages": 3}'
+```
+
+### 📋 Response
+
+```json
+{
+  "message": "60 movies imported successfully from 3 page(s).",
+  "movies": [
+    "Inception",
+    "The Batman",
+    "Dune",
+    ...
+  ]
+}
+```
+
 ## ⚙️ Setup
 
 1. Clone the repo:
