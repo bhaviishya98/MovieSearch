@@ -9,7 +9,10 @@ export default async function handler(req, res) {
   try {
     await dbConnect();
 
-    const { name, cast, description } = req.body;
+    const { name, cast, description, genres } = req.body;
+
+    console.log("Received movie data:", req.body);
+    
 
     if (!name || !description) {
       return res
@@ -23,7 +26,7 @@ export default async function handler(req, res) {
 
     const updatedMovie = await Movie.findOneAndUpdate(
       { name: new RegExp(`^${name}$`, "i") },
-      { name, cast, description },
+      { name, cast, description, genres },
       {
         new: true,
         upsert: true,

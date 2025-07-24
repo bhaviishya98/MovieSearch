@@ -31,9 +31,13 @@ export default function MovieDetailPage() {
       name: movieData.title,
       description: movieData.overview,
       cast: movieData.credits?.cast
-        ?.slice(0, 5)
-        .map((actor) => ({ name: actor.name })),
+        ?.map((actor) => ({ name: actor.name, character: actor.character })),
+      genres: movieData.genres?.map((genre) => genre.name) || [],
     };
+
+    console.log("THis is the movie data to save:", movieData);
+    
+    console.log("Saving movie to DB with body:", body);
 
     try {
       const res = await fetch("/api/saveMovie", {
